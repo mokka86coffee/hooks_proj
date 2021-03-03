@@ -20,8 +20,8 @@ function App(props) {
   const todos20 = useMemo(
     () => {
       console.log('in todos20');
+        const bufTodos = [...todos];
       const style = { padding: '10px', background: 'skyblue', display: 'inline-block' }
-      const bufTodos = [...todos];
       bufTodos.length = bufTodos.length > 5 ? 5 : bufTodos.length;
       return bufTodos.map( (todo, idx) => <span style={style} key={idx}>{ todo.title || todo }</span>);
     }, [todos]
